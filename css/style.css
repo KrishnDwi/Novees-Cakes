@@ -1,0 +1,213 @@
+/* selector semua element */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+  background-color: whitesmoke;
+}
+
+/* css navigation bar */
+nav {
+  background-color: rgba(234, 151, 123, 0.8);
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 6%;
+  border-bottom: 0.25rem solid white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+nav .navbar-logo {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: auto 0rem;
+}
+nav .navbar-logo:hover {
+  color: rgb(175, 175, 175);
+}
+nav .navbar-nav a {
+  font-size: 1.2rem;
+  display: inline-block;
+  padding: 2rem;
+  margin: auto 0rem;
+  color: white;
+}
+nav .navbar-nav a:hover {
+  color: rgb(175, 175, 175);
+}
+
+
+
+/* css section pertama landing page */
+.landing-page {
+  height: 100vh;
+  background-image: url("/img/landing-page-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+  mask-image: linear-gradient(rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0));
+}
+.landing-page {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.landing-page .text h1 {
+  font-size: 7rem;
+}
+.landing-page .text p {
+  font-size: 1.1rem;
+  padding: 0vw 15vw;
+}
+.landing-page .text button {
+  padding: 1rem 5rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  color: whitesmoke;
+  background-color: darksalmon;
+}
+.landing-page button:hover {
+  background-color: salmon;
+  cursor: pointer;
+}
+
+
+
+/* css sectioan kedua about us */
+.about-us header {
+  padding: 3rem;
+  background-color: rgba(215, 215, 215, 0.5);
+  font-size: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-us .container {
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-us .container .content {
+  display: flex;
+  width: 90%;
+}
+.about-us .container .content .picture img {
+  width: 100%;
+  border-radius: 1rem;
+}
+.about-us .container .content .picture {
+  flex: 1 1 810px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-us .container .content .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 810px;
+  padding-left: 2rem;
+}
+.about-us .container .content .text h1{
+  font-size: 2.5rem;
+}
+.about-us .container .content .text p{
+  padding: 1.5rem 0rem;
+}
+
+
+
+/* css section ketiga menu */
+
+.menu header {
+  padding: 3rem;
+  background-color: rgba(215, 215, 215, 0.5);
+  font-size: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu .container{
+  overflow-x: scroll;
+}
+.menu .container .slider {
+  padding: 5rem;
+  display: inline-flex;
+}
+.menu .item-menu {
+  margin: 0rem 1rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 20rem;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  flex: 4 4 2rem;
+}
+.menu .item-menu img{
+  width: 100%;
+  border-radius: 1rem;
+}
+.menu .item-menu h2{
+  padding: 1rem 0rem;
+}
+
+
+
+
+
+
+
+
+footer {
+  padding: 15px;
+  text-align: center;
+  background-color: lightgray;
+}
+footer .navbar-nav a{
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* Tablet Responsive */
+@media (max-width: 811px) {
+  html {
+    font-size: 62.5%;
+  }
+  .about-us .container .content {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  .about-us .container .content .text {
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+}
+
+/* Laptop Responsive */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
