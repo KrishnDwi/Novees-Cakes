@@ -140,12 +140,35 @@ nav .navbar-nav a:hover {
   justify-content: center;
   align-items: center;
 }
-.menu .container{
+.menu #container-slider{
   overflow-x: scroll;
 }
-.menu .container .slider {
+.menu #container-slider .slider {
   padding: 5rem;
   display: inline-flex;
+}
+.menu .slider-button{
+  margin-top: 11rem;
+}
+.menu #container-slider .slider-button #prev{
+  padding: 1rem;
+  border-radius: 3rem;
+  font-size: 3rem;
+  background-color: rgba(234, 151, 123, 0.8);
+  color: white;
+  position: absolute;
+  left: 2rem;
+  font-weight: bolder;
+}
+.menu #container-slider .slider-button #next{
+  padding: 1rem;
+  border-radius: 3rem;
+  font-size: 3rem;
+  background-color: rgba(234, 151, 123, 0.8);
+  color: white;
+  position: absolute;
+  right: 2rem;
+  font-weight: bolder;
 }
 .menu .item-menu {
   margin: 0rem 1rem;
