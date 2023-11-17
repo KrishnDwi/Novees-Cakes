@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 // Tombol untuk maju mundur slider
 var button = document.getElementById('next');
 button.onclick = function () {
@@ -32,3 +25,18 @@ function sideScroll(element,direction,speed,distance,step){
         }
     }, speed);
 }
+
+//form validation
+function pesan() {
+    var nama = document.getElementById('nama').value;
+    var alamat = document.getElementById('alamat').value;
+    var kue = document.getElementById('kue').value;
+
+    // Implement your authentication logic here
+    // For demonstration purposes, let's check if both fields are non-empty
+    if (nama == '' || alamat == '' || kue == '') {
+      document.getElementById('respon-pesan').innerHTML = "Mohon isi semua kolom"
+    } else{
+        document.getElementById('respon-pesan').innerHTML = "Pesanan diterima"
+    }
+  }
