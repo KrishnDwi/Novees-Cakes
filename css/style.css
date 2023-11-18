@@ -184,6 +184,7 @@ nav #menu-bar{
   display: flex;
   flex-direction: column;
   flex: 4 4 2rem;
+  box-shadow: 7px 7px 7px #aaaaaa;
 }
 .menu .item-menu img{
   width: 100%;
@@ -249,21 +250,15 @@ footer .navbar-nav a{
   text-align: center;
 }
 
-/* Mobile Responsive */
-@media (max-width: 663px) {
+
+
+/* Laptop Responsive */
+@media (max-width: 1366px) {
   html {
-    font-size: 55%;
-  }
-  nav #menu-bar{
-    display: inline-block;
-    padding: 2rem;
-    margin: auto 0rem;
-    color: white;
-  }
-  nav .navbar-nav{
-    display: none;
+    font-size: 75%;
   }
 }
+
 
 /* Tablet Responsive */
 @media (max-width: 811px) {
@@ -276,8 +271,28 @@ footer .navbar-nav a{
     margin: auto 0rem;
     color: white;
   }
-  nav .navbar-nav{
-    display: none;
+  nav .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(234, 151, 123, 0.9);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+    display: block;
+  }
+  nav .navbar-nav.active {
+    right: 0;
+  }
+  nav .navbar-nav a {
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  nav .navbar-nav a:hover{
+    background-color: rgba(215, 215, 215, 0.8);
+    color: salmon;
   }
   .about-us .container .content {
     flex-wrap: wrap;
@@ -290,9 +305,40 @@ footer .navbar-nav a{
   }
 }
 
-/* Laptop Responsive */
-@media (max-width: 1366px) {
+/* Mobile Responsive */
+@media (max-width: 663px) {
   html {
-    font-size: 75%;
+    font-size: 55%;
+  }
+  nav #menu-bar{
+    display: inline-block;
+    padding: 2rem;
+    margin: auto 0rem;
+    color: white;
+  }
+  nav .navbar-nav {
+    position: absolute;
+    display: block;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(234, 151, 123, 0.9);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  nav .navbar-nav.active {
+    right: 0;
+  }
+  nav .navbar-nav a {
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  nav .navbar-nav a:hover{
+    background-color: rgba(215, 215, 215, 0.8);
+    color: salmon;
   }
 }
+
+
