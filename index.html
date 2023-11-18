@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title> &#127856; Novee's Cake</title>
   <link rel="stylesheet" href="/css/style.css" />
-  <!-- link fontawesome icon -->
-  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+  <!-- link feather icon -->
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
@@ -23,9 +23,7 @@
       <a href="#">Contact</a>
     </div>
     <!-- Responsive Side Menu Navigation -->
-    <!-- <div class="navbar-extra">
-        <a href="#" id="hamburger-menu"></a>
-      </div> -->
+    <a href="#" id="menu-bar"><i data-feather="menu"></i></a>
   </nav>
   <!-- Landing Page -->
   <section class="landing-page">
@@ -46,7 +44,7 @@
     <div class="container">
       <div class="content">
         <div class="picture">
-          <img src="/img/landing-page-bg.jpg" alt="" />
+          <img src="/img/about-image.jpg" alt="" />
         </div>
         <div class="text">
           <h1>Novee's Cakes</h1>
@@ -177,22 +175,22 @@
     </div>
   </section>
 
-  <!-- Form Pemesanan  -->
-  <section class="formulir-pemesanan">
+  <!-- Form Contact  -->
+  <section class="contact">
     <header>
-      <h1>Formulir Pemesanan</h1>
+      <h1>Contact</h1>
     </header>
     <div class="container">
       <form action="/" id="formulir">
 
-          <label for="nama">Nama Pemesan</label>
+          <label for="nama">Nama</label>
           <input type="text" name="nama" id="nama">
 
-          <label for="alamat">Alamat Dikirm</label>
-          <input type="text" name="alamat" id="alamat">
+          <label for="alamat">Email</label>
+          <input type="email" name="alamat" id="alamat">
           
-          <label for="kue">Nama Kue</label>
-          <input type="text" name="kue" id="kue">
+          <label for="kue">No Telepon</label>
+          <input type="number" name="kue" id="kue">
         <button type="button" onclick="pesan()">Login</button>
         <p id="respon-pesan"></p>
       </form>
@@ -218,6 +216,12 @@
     <p>Created by <a href="">Krishn</a> | &copy; 2023.</p>
   </footer>
 
+
+  <!-- Feather Icons -->
+  <script>
+    feather.replace()
+  </script>
+  <!-- srcipt js -->
   <script src="/js/script.js"></script>
 </body>
 

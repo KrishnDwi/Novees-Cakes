@@ -14,7 +14,7 @@ html {
 
 /* css navigation bar */
 nav {
-  background-color: rgba(234, 151, 123, 0.8);
+  background-color: rgba(234, 151, 123, 0.9);
   display: flex;
   justify-content: space-between;
   padding: 0rem 6%;
@@ -29,9 +29,13 @@ nav .navbar-logo {
   font-size: 2rem;
   font-weight: 700;
   margin: auto 0rem;
+  padding: 2rem;
 }
 nav .navbar-logo:hover {
   color: rgb(175, 175, 175);
+}
+nav .navbar-nav{
+  display: flex;
 }
 nav .navbar-nav a {
   font-size: 1.2rem;
@@ -42,6 +46,9 @@ nav .navbar-nav a {
 }
 nav .navbar-nav a:hover {
   color: rgb(175, 175, 175);
+}
+nav #menu-bar{
+  display: none;
 }
 
 
@@ -188,7 +195,7 @@ nav .navbar-nav a:hover {
 
 
 /* css section keempat formulir pemesanan */
-.formulir-pemesanan header {
+.contact header {
   padding: 3rem;
   background-color: rgba(215, 215, 215, 0.5);
   font-size: 2.4rem;
@@ -196,19 +203,19 @@ nav .navbar-nav a:hover {
   justify-content: center;
   align-items: center;
 }
-.formulir-pemesanan .container {
+.contact .container {
   padding: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.formulir-pemesanan .container #formulir {
+.contact .container #formulir {
   background-color: darksalmon;
   width: 50vw;
   padding: 2rem;
   border-radius: 2rem;
 }
-.formulir-pemesanan .container #formulir input{
+.contact .container #formulir input{
   display:block;
   margin-bottom: 1.3rem;
   margin-top: 1rem;
@@ -218,12 +225,12 @@ nav .navbar-nav a:hover {
   padding: 1rem;
   font-size: 1.1rem;
 }
-.formulir-pemesanan .container #formulir button{
+.contact .container #formulir button{
   padding: 1rem 3rem;
   border-radius: 2rem;
   background-color: rgba(215, 215, 215, 0.5);
 }
-.formulir-pemesanan .container #formulir button:hover{
+.contact .container #formulir button:hover{
   background-color: rgb(215, 215, 215);
   cursor: pointer;
 }
@@ -243,9 +250,18 @@ footer .navbar-nav a{
 }
 
 /* Mobile Responsive */
-@media (max-width: 450px) {
+@media (max-width: 663px) {
   html {
     font-size: 55%;
+  }
+  nav #menu-bar{
+    display: inline-block;
+    padding: 2rem;
+    margin: auto 0rem;
+    color: white;
+  }
+  nav .navbar-nav{
+    display: none;
   }
 }
 
@@ -253,6 +269,15 @@ footer .navbar-nav a{
 @media (max-width: 811px) {
   html {
     font-size: 62.5%;
+  }
+  nav #menu-bar{
+    display: inline-block;
+    padding: 2rem;
+    margin: auto 0rem;
+    color: white;
+  }
+  nav .navbar-nav{
+    display: none;
   }
   .about-us .container .content {
     flex-wrap: wrap;
