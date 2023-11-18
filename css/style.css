@@ -237,17 +237,22 @@ nav #menu-bar{
 }
 
 
-
-
-
 footer {
   padding: 15px;
   text-align: center;
   background-color: lightgray;
 }
+footer .navbar-nav{
+  padding: 1rem;
+}
 footer .navbar-nav a{
+  font-size: 1.2rem;
   padding: 1rem;
   text-align: center;
+  color: black;
+}
+footer .navbar-nav a:hover{
+  color: salmon;
 }
 
 
