@@ -21,6 +21,7 @@
       <a href="#about-us">About Us</a>
       <a href="#menu">Menu</a>
       <a href="#contact">Contact</a>
+      <a href="./login.php">Login</a>
     </div>
     <!-- Responsive Side Menu Navigation -->
     <a href="#" id="menu-bar"><i data-feather="menu"></i></a>
