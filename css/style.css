@@ -56,7 +56,7 @@ nav #menu-bar{
 /* css section pertama landing page */
 .landing-page {
   height: 100vh;
-  background-image: url("/img/landing-page-bg.jpg");
+  background-image: url("../img/landing-page-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
