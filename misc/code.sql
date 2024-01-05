@@ -24,9 +24,11 @@ CREATE TABLE menu (
     harga_menu int(11) NOT NULL
 )
 
-CREATE TABLE order (
-    id_order int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    id_pelanggan int(11) FOREIGN KEY REFERENCES pelanggan(id_pelanggan),
-    id_menu int(11) FOREIGN KEY REFERENCES menu(id_menu),
+CREATE TABLE orders (
+    id_orders int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    id_pelanggan int(11),
+    FOREIGN KEY (id_pelanggan) REFERENCES pelanggan(id_pelanggan),
+    id_menu int(11),
+    FOREIGN KEY (id_menu) REFERENCES menu(id_menu),
     total_harga int(11) 
 )
