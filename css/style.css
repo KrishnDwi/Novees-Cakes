@@ -195,6 +195,7 @@ nav #menu-bar{
 }
 
 
+
 /* css section keempat formulir pemesanan */
 .contact header {
   padding: 3rem;
@@ -237,6 +238,7 @@ nav #menu-bar{
 }
 
 
+/* css footer */
 footer {
   padding: 15px;
   text-align: center;
@@ -253,6 +255,29 @@ footer .navbar-nav a{
 }
 footer .navbar-nav a:hover{
   color: salmon;
+}
+
+
+/* css login */
+.login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.login .container{
+  width: 30%;
+  background-color: salmon;
+  display: block;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+.login .container input{
+  width: 100%;
+  padding: 0.4rem;
+  margin: 0.5rem 0px;
+  border-radius: 0.3rem;
 }
 
 
