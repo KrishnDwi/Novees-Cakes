@@ -22,6 +22,7 @@
       <a href="#menu">Menu</a>
       <a href="#contact">Contact</a>
       <a href="./login.php">Login</a>
+      <a href="./logout.php">Logout</a>
     </div>
     <!-- Responsive Side Menu Navigation -->
     <a href="#" id="menu-bar"><i data-feather="menu"></i></a>
