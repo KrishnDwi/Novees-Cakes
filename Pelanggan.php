@@ -27,5 +27,19 @@ class Pelanggan
         ]);
     }
 
-    // Add methods for update and delete as needed
+	public function authenticate($username, $password)
+	{
+		$stmt = $this->pdo->prepare("SELECT * FROM pelanggan WHERE username = :username AND password = :password");
+		$stmt->execute(['username' => $username, 'password' => $password]);
+		$pelanggan = $stmt->fetch();
+
+		if ($pelanggan)
+		{
+			return $pelanggan;
+		} 
+		else 
+		{
+			return false;
+		}
+	}
 }
