@@ -12,7 +12,7 @@
             <h1>Register</h1>
             <form action="" method="POST">
                 <input type="text" name="nama_pelanggan" placeholder="Nama">
-                <input type="text" name="telp" placeholder="Telepon">
+                <input type="number" name="no_telp" placeholder="Telepon">
                 <input type="text" name="alamat" placeholder="Alamat">
                 <input type="text" name="username" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
