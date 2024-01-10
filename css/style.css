@@ -23,13 +23,13 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
+  height: 8vh;
 }
 nav .navbar-logo {
   color: white;
   font-size: 2rem;
   font-weight: 700;
   margin: auto 0rem;
-  padding: 2rem;
 }
 nav .navbar-logo:hover {
   color: rgb(175, 175, 175);
@@ -38,9 +38,8 @@ nav .navbar-nav{
   display: flex;
 }
 nav .navbar-nav a {
-  font-size: 1.2rem;
   display: inline-block;
-  padding: 2rem;
+  padding: 0px 2rem;
   margin: auto 0rem;
   color: white;
 }
@@ -93,7 +92,7 @@ nav #menu-bar{
 
 /* css sectioan kedua about us */
 .about-us header {
-  padding: 3rem;
+  height: 20vh;
   background-color: rgba(215, 215, 215, 0.5);
   font-size: 2.4rem;
   display: flex;
@@ -101,6 +100,7 @@ nav #menu-bar{
   align-items: center;
 }
 .about-us .container {
+  height: 80vh;
   padding: 5rem;
   display: flex;
   justify-content: center;
@@ -140,7 +140,7 @@ nav #menu-bar{
 
 /* css section ketiga menu */
 .menu header {
-  padding: 3rem;
+  height: 20vh;
   background-color: rgba(215, 215, 215, 0.5);
   font-size: 2.4rem;
   display: flex;
@@ -151,6 +151,7 @@ nav #menu-bar{
   overflow-x: scroll;
 }
 .menu #container-slider .slider {
+  height: 80vh;
   padding: 5rem;
   display: inline-flex;
 }
@@ -198,7 +199,7 @@ nav #menu-bar{
 
 /* css section keempat formulir pemesanan */
 .contact header {
-  padding: 3rem;
+  height: 20vh;
   background-color: rgba(215, 215, 215, 0.5);
   font-size: 2.4rem;
   display: flex;
@@ -206,6 +207,7 @@ nav #menu-bar{
   align-items: center;
 }
 .contact .container {
+  height: 80vh;
   padding: 5rem;
   display: flex;
   justify-content: center;
@@ -280,6 +282,53 @@ footer .navbar-nav a:hover{
   border-radius: 0.3rem;
 }
 
+
+
+/* css index_admin */
+.admin .header{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: salmon;
+  color: white;
+}
+.admin .container{
+  display: flex;
+  height: 100vh;
+}
+.admin .container .side-bar{
+  width: 20vw;
+  background-color: cadetblue;
+}
+.admin .container .side-bar a{
+  display: block;
+  padding: 1rem;
+  color: white;
+}
+.admin .container .side-bar a:hover{
+  background-color: #aaaaaa;
+}
+.admin .container .content{
+  width: 80vw;
+  padding: 15px;
+}
+.admin .container .content table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.admin .container .content table td{
+  border: 1px black solid;
+  border-collapse: collapse;
+  padding: 10px;
+}
+.admin .container .content table th{
+  border: 1px black solid;
+  border-collapse: collapse;
+  padding: 10px;
+  background-color: cadetblue;
+  color: white;
+}
 
 
 /* Laptop Responsive */
