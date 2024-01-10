@@ -284,6 +284,53 @@ footer .navbar-nav a:hover{
 
 
 
+/* css index_admin */
+.admin .header{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: salmon;
+  color: white;
+}
+.admin .container{
+  display: flex;
+  height: 100vh;
+}
+.admin .container .side-bar{
+  width: 20vw;
+  background-color: cadetblue;
+}
+.admin .container .side-bar a{
+  display: block;
+  padding: 1rem;
+  color: white;
+}
+.admin .container .side-bar a:hover{
+  background-color: #aaaaaa;
+}
+.admin .container .content{
+  width: 80vw;
+  padding: 15px;
+}
+.admin .container .content table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.admin .container .content table td{
+  border: 1px black solid;
+  border-collapse: collapse;
+  padding: 10px;
+}
+.admin .container .content table th{
+  border: 1px black solid;
+  border-collapse: collapse;
+  padding: 10px;
+  background-color: cadetblue;
+  color: white;
+}
+
+
 /* Laptop Responsive */
 @media (max-width: 1366px) {
   html {
