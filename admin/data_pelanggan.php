@@ -11,14 +11,16 @@
 <body>
     <div class="admin">
         <div class="header">
-            <h1>Novee's Cakes</h1>
+            <h1>Data Pelanggan</h1>
         </div>
         <div class="container">
             <div class="side-bar">
                 <div class="navbar-nav">
-                    <a href="#">Data Pelanggan</a>
-                    <a href="#">Data Admin</a>
-                    <a href="#">Data Order</a>
+                    <a href="./index_admin.php">Beranda</a>
+                    <a href="./data_pelanggan.php">Data Pelanggan</a>
+                    <a href="./data_menu.php">Data Menu</a>
+                    <a href="./data_admin.php">Data Admin</a>
+                    <a href="./data_order.php">Data Order</a>
                     <a href="../logout.php">Logout</a>
                 </div>
             </div>

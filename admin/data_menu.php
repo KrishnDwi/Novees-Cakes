@@ -11,7 +11,7 @@
 <body>
     <div class="admin">
         <div class="header">
-            <h1>Beranda</h1>
+            <h1>Data Menu</h1>
         </div>
         <div class="container">
             <div class="side-bar">
