@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: ../login_admin.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +25,7 @@
         <div class="container">
             <div class="side-bar">
                 <div class="navbar-nav">
-                    <a href="./index_admin.php">Beranda</a>
+                    <a href="./index.php">Beranda</a>
                     <a href="./data_pelanggan.php">Data Pelanggan</a>
                     <a href="./data_menu.php">Data Menu</a>
                     <a href="./data_admin.php">Data Admin</a>
