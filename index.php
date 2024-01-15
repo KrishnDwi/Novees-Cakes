@@ -1,3 +1,8 @@
+<?php
+require_once 'Menu.php';
+$view_menu = new Menu($pdo);
+$menu = $view_menu->getAllMenu();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,17 +81,17 @@
     <div id="container-slider">
       <!-- Menu Slider -->
       <div class="slider">
+        <?php
+          foreach ($menu as $view_menu) 
+          { ?>
         <div class="item-menu">
-          <img src="./img/landing-page-bg.jpg" alt="" />
-          <h2>Hello</h2>
+          <img src="./img/menu/<?php echo htmlspecialchars($view_menu['image']); ?>" alt="" />
+          <h2><?php echo htmlspecialchars($view_menu['nama_menu']); ?></h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-            vero commodi porro dignissimos. Sequi libero minus quis, deleniti
-            voluptatibus odit saepe? Recusandae quisquam dicta exercitationem
-            modi quas ullam perferendis ab!
+            <?php echo htmlspecialchars($view_menu['deskripsi']); ?>
           </p>
         </div>
-        
+      <?php } ?>
         <!-- Tomboo maju mundur slider -->
         <div class="slider-button">
           <button id="prev">
