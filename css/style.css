@@ -14,7 +14,7 @@ html {
 
 /* css navigation bar */
 nav {
-  background-color: rgba(234, 151, 123, 0.9);
+  background-color: rgba(234, 151, 123);
   display: flex;
   justify-content: space-between;
   padding: 0rem 6%;
@@ -32,7 +32,7 @@ nav .navbar-logo {
   margin: auto 0rem;
 }
 nav .navbar-logo:hover {
-  color: rgb(175, 175, 175);
+  color: black;
 }
 nav .navbar-nav{
   display: flex;
@@ -44,7 +44,7 @@ nav .navbar-nav a {
   color: white;
 }
 nav .navbar-nav a:hover {
-  color: rgb(175, 175, 175);
+  color: black;
 }
 nav #menu-bar{
   display: none;
@@ -92,7 +92,7 @@ nav #menu-bar{
 
 /* css sectioan kedua about us */
 .about-us header {
-  height: 20vh;
+  height: 15vh;
   background-color: rgba(215, 215, 215, 0.5);
   font-size: 2.4rem;
   display: flex;
@@ -100,7 +100,7 @@ nav #menu-bar{
   align-items: center;
 }
 .about-us .container {
-  height: 80vh;
+
   padding: 5rem;
   display: flex;
   justify-content: center;
@@ -140,7 +140,7 @@ nav #menu-bar{
 
 /* css section ketiga menu */
 .menu header {
-  height: 20vh;
+  height: 15vh;
   background-color: rgba(215, 215, 215, 0.5);
   font-size: 2.4rem;
   display: flex;
@@ -151,7 +151,7 @@ nav #menu-bar{
   overflow-x: scroll;
 }
 .menu #container-slider .slider {
-  height: 80vh;
+
   padding: 5rem;
   display: inline-flex;
 }
@@ -199,7 +199,7 @@ nav #menu-bar{
 
 /* css section keempat formulir pemesanan */
 .contact header {
-  height: 20vh;
+  height: 15vh;
   background-color: rgba(215, 215, 215, 0.5);
   font-size: 2.4rem;
   display: flex;
@@ -207,7 +207,7 @@ nav #menu-bar{
   align-items: center;
 }
 .contact .container {
-  height: 80vh;
+
   padding: 5rem;
   display: flex;
   justify-content: center;
@@ -295,7 +295,7 @@ footer .navbar-nav a:hover{
 }
 .admin .container{
   display: flex;
-  height: 100vh;
+  height: 90vh;
 }
 .admin .container .side-bar{
   width: 20vw;
@@ -330,11 +330,66 @@ footer .navbar-nav a:hover{
   color: white;
 }
 
+/* data menu */
+.admin .content #show-pop-up{
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.admin .pop-up-menu .close-btn{
+  right: 20px;
+  position: absolute;
+}
+.admin .pop-up-menu .close-btn button{
+  border-radius: 50%;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+.admin .pop-up-menu{
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.25);
+  width: 30%;
+  background-color: salmon;
+  padding: 20px;
+  border-radius: 10px;
+  transition: top 0ms ease-in-out 200ms,
+              opacity 200ms ease-in-out 0ms,
+              transform 20ms ease-in-out 0ms,;
+}
+.admin .pop-up-menu.active{
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: top 0ms ease-in-out 0ms,
+              opacity 200ms ease-in-out 0ms,
+              transform 20ms ease-in-out 0ms,;
+}
+.admin .pop-up-menu h2{
+  text-align: center;
+  padding: 15px 0 15px;
+  color: white;
+}
+.admin .pop-up-menu input,
+.admin .pop-up-menu textarea{
+  width: 100%;
+  display: block;
+  padding: 8px;
+  margin: 5px 0px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.admin .container .content img{
+  width: 200px;
+}
 
 /* Laptop Responsive */
 @media (max-width: 1366px) {
   html {
-    font-size: 75%;
+    font-size: 85%;
   }
 }
 
@@ -342,7 +397,7 @@ footer .navbar-nav a:hover{
 /* Tablet Responsive */
 @media (max-width: 811px) {
   html {
-    font-size: 62.5%;
+    font-size: 75%;
   }
   nav #menu-bar{
     display: inline-block;
@@ -387,7 +442,7 @@ footer .navbar-nav a:hover{
 /* Mobile Responsive */
 @media (max-width: 663px) {
   html {
-    font-size: 55%;
+    font-size: 65%;
   }
   nav #menu-bar{
     display: inline-block;
