@@ -35,15 +35,19 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </div>
 
             <div class="content">
+            <button id="show-pop-up">
+                    Add Pelanggan
+                </button>
             <?php
                 require_once '../Pelanggan.php';
+                require_once '../add_pelanggan.php';
                 $view_pelanggan = new Pelanggan($pdo);
                 $pelanggan = $view_pelanggan->getAllPelanggan();
             ?>
                 <table>
                     <tr>
-                        <th>Id Pelanggan</th>
-                        <th>Nama Pelanggan</th>
+                        <th>ID</th>
+                        <th>Nama</th>
                         <th>No Telepon</th>
                         <th>Alamat</th>
                         <th>Username</th>
@@ -63,9 +67,46 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 }
             ?>
                 </table>
+                <div class="pop-up-menu">
+            <div class="close-btn">
+                <button>
+                &times;
+                </button>
+            </div>
+            <h2>Add Pelanggan</h2>
+            <hr>
+            <form method="POST" >
+                <label for="nama_pelanggan">Nama Pelanggan</label>
+                <input type="text" name="nama_pelanggan" required>
+                
+                <label for="no_telp">Telepon</label>
+                <input type="text" name="no_telp" required>
+                
+                <label for="alamat">Alamat</label>
+                <input type="text" name="alamat" required>
+
+                <label for="username">Username</label>
+                <input type="text" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="text" name="password" required>
+
+                
+                <input type="submit" name="add_pelanggan" value="Add">
+            </form>
+        </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    // pop up modal form menu
+document.querySelector("#show-pop-up").addEventListener("click",function(){
+    document.querySelector(".pop-up-menu").classList.add("active");
+});
+document.querySelector(".pop-up-menu .close-btn").addEventListener("click",function(){
+    document.querySelector(".pop-up-menu").classList.remove("active");
+});
+</script>
 
 </html>
