@@ -90,6 +90,7 @@ $menu = $view_menu->getAllMenu();
           <p>
             <?php echo htmlspecialchars($view_menu['deskripsi']); ?>
           </p>
+          <h3>Rp. <?php echo htmlspecialchars($view_menu['harga_menu']); ?></h3>
         </div>
       <?php } ?>
         <!-- Tomboo maju mundur slider -->
