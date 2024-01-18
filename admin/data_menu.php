@@ -86,7 +86,7 @@ $menu = $view_menu->getAllMenu();
                 <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png">
 
                 <label for="deskripsi">Deskripsi</label>
-                <textarea name="deskripsi" id="" cols="30" rows="10"></textarea>
+                <textarea name="deskripsi" id="" cols="30" rows="10" maxlength="255"></textarea>
                 
                 <input type="submit" name="add_menu" value="Add">
             </form>

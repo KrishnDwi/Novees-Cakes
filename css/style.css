@@ -335,58 +335,6 @@ footer .navbar-nav a:hover{
   color: white;
 }
 
-/* data menu */
-.admin .content #show-pop-up{
-  padding: 15px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.admin .pop-up-menu .close-btn{
-  right: 20px;
-  position: absolute;
-}
-.admin .pop-up-menu .close-btn button{
-  border-radius: 50%;
-  padding: 2px 5px;
-  cursor: pointer;
-}
-.admin .pop-up-menu{
-  position: absolute;
-  top: -150%;
-  left: 50%;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(1.25);
-  width: 30%;
-  background-color: salmon;
-  padding: 20px;
-  border-radius: 10px;
-  transition: top 0ms ease-in-out 200ms,
-              opacity 200ms ease-in-out 0ms,
-              transform 20ms ease-in-out 0ms,;
-}
-.admin .pop-up-menu.active{
-  top: 50%;
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-  transition: top 0ms ease-in-out 0ms,
-              opacity 200ms ease-in-out 0ms,
-              transform 20ms ease-in-out 0ms,;
-}
-.admin .pop-up-menu h2{
-  text-align: center;
-  padding: 15px 0 15px;
-  color: white;
-}
-.admin .pop-up-menu input,
-.admin .pop-up-menu textarea{
-  width: 100%;
-  display: block;
-  padding: 8px;
-  margin: 5px 0px;
-  border-radius: 5px;
-  margin-bottom: 15px;
-}
-
 .admin .container .content img{
   width: 200px;
 }
