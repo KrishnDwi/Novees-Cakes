@@ -35,15 +35,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </div>
 
             <div class="content">
-            <button id="show-pop-up">
-                    Add Pelanggan
-                </button>
-            <?php
-                require_once '../Pelanggan.php';
-                require_once '../add_pelanggan.php';
-                $view_pelanggan = new Pelanggan($pdo);
-                $pelanggan = $view_pelanggan->getAllPelanggan();
-            ?>
+                <a href="../register.php">
+                    <button>
+                        Add Pelanggan
+                    </button>
+                </a>
                 <table>
                     <tr>
                         <th>ID</th>
@@ -52,61 +48,54 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                         <th>Alamat</th>
                         <th>Username</th>
                         <th>Password</th>
+                        <th>Action</th>
                     </tr>
-            <?php
-                foreach ($pelanggan as $view_pelanggan) 
-                {
-                    echo "<tr>";
-                        echo "<td>" . htmlspecialchars($view_pelanggan['id_pelanggan']) . "</td>";
-                        echo "<td>" . htmlspecialchars($view_pelanggan['nama_pelanggan']) . "</td >";
-                        echo "<td>" . htmlspecialchars($view_pelanggan['no_telp']) . "</td >";
-                        echo "<td>" . htmlspecialchars($view_pelanggan['alamat']) . "</td >";
-                        echo "<td>" . htmlspecialchars($view_pelanggan['username']) . "</td >";
-                        echo "<td>" . htmlspecialchars($view_pelanggan['password']) . "</td >";
-                    echo "</tr>";
-                }
-            ?>
+                    <?php
+                    require_once '../Pelanggan.php';
+                    require_once '../add_pelanggan.php';
+                    $view_pelanggan = new Pelanggan($pdo);
+                    $pelanggan = $view_pelanggan->getAllPelanggan();
+                    foreach ($pelanggan as $view_pelanggan) {
+                    ?>
+                        <tr>
+                            <td>
+                                <?php echo $view_pelanggan['id_pelanggan'] ?>
+                            </td>
+                            <td>
+                                <?php echo $view_pelanggan['nama_pelanggan'] ?>
+                            </td>
+                            <td>
+                                <?php echo $view_pelanggan['no_telp'] ?>
+                            </td>
+                            <td>
+                                <?php echo $view_pelanggan['alamat'] ?>
+                            </td>
+                            <td>
+                                <?php echo $view_pelanggan['username'] ?>
+                            </td>
+                            <td>
+                                <?php echo $view_pelanggan['password'] ?>
+                            </td>
+                            <td>
+                                <a href="../update_pelanggan.php?id_pelanggan=<?php echo $view_pelanggan['id_pelanggan']; ?>">Update</a>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
                 </table>
-                <div class="pop-up-menu">
-            <div class="close-btn">
-                <button>
-                &times;
-                </button>
-            </div>
-            <h2>Add Pelanggan</h2>
-            <hr>
-            <form method="POST" >
-                <label for="nama_pelanggan">Nama Pelanggan</label>
-                <input type="text" name="nama_pelanggan" required>
-                
-                <label for="no_telp">Telepon</label>
-                <input type="text" name="no_telp" required>
-                
-                <label for="alamat">Alamat</label>
-                <input type="text" name="alamat" required>
-
-                <label for="username">Username</label>
-                <input type="text" name="username" required>
-
-                <label for="password">Password</label>
-                <input type="text" name="password" required>
-
-                
-                <input type="submit" name="add_pelanggan" value="Add">
-            </form>
-        </div>
             </div>
         </div>
     </div>
 </body>
 <script>
     // pop up modal form menu
-document.querySelector("#show-pop-up").addEventListener("click",function(){
-    document.querySelector(".pop-up-menu").classList.add("active");
-});
-document.querySelector(".pop-up-menu .close-btn").addEventListener("click",function(){
-    document.querySelector(".pop-up-menu").classList.remove("active");
-});
+    document.querySelector("#show-pop-up").addEventListener("click", function () {
+        document.querySelector(".pop-up-menu").classList.add("active");
+    });
+    document.querySelector(".pop-up-menu .close-btn").addEventListener("click", function () {
+        document.querySelector(".pop-up-menu").classList.remove("active");
+    });
 </script>
 
 </html>
