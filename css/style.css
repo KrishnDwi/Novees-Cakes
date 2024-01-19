@@ -287,30 +287,6 @@ footer .navbar-nav a:hover{
 }
 
 
-/* css login */
-.login{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-.login .container{
-  width: 30%;
-  background-color: salmon;
-  display: block;
-  padding: 2rem;
-  border-radius: 1rem;
-  text-align: center;
-}
-.login .container input{
-  width: 100%;
-  padding: 0.4rem;
-  margin: 0.5rem 0px;
-  border-radius: 0.3rem;
-}
-
-
-
 /* css index_admin */
 .admin .header{
   height: 10vh;
@@ -368,32 +344,36 @@ footer .navbar-nav a:hover{
   align-items: center;
   justify-content: center;
 }
-.form-body .form-container .header{
+.form-body  .header{
   text-align: center;
   font-size: larger;
   padding: 20px;
 }
-.form-body .form-container .content{
+.form-body .content{
   background-color: salmon;
   width: 80vw;
   margin: auto;
   padding: 15px;
   border-radius: 10px;
 }
-.form-body .form-container .content .row{
+.form-body .content .row{
   display: flex;
-  padding: 10px 0px;
 }
-.form-body .form-container .content .row .form-element{
+.form-body .content .form-element{
   width: 100%;
-  padding: 0px 20px;
+  padding: 10px 20px;
 }
-.form-body .form-container .content .form-element input[type=text],
-.form-body .form-container .content .form-element input[type=submit],
-.form-body .form-container .content .form-element .cancel-btn{
+.form-body .content .form-element input[type=text],
+.form-body .content .form-element .password,
+.form-body .content .form-element input[type=submit],
+.form-body .content .form-element .cancel-btn{
   padding: 10px;
   border-radius: 5px;
   width: 100%;
+}
+
+.form-body .form-container-login .content{
+  width: 50vh;
 }
 
 /* Laptop Responsive */

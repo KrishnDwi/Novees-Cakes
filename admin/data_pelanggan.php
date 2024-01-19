@@ -35,8 +35,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </div>
 
             <div class="content">
-                <a href="../register.php">
-                    <button>
+                <a href="../add_pelanggan.php">
+                    <button class="btn">
                         Add Pelanggan
                     </button>
                 </a>
@@ -51,8 +51,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                         <th>Action</th>
                     </tr>
                     <?php
-                    require_once '../Pelanggan.php';
-                    require_once '../add_pelanggan.php';
+                    require_once '../process_pelanggan.php';
                     $view_pelanggan = new Pelanggan($pdo);
                     $pelanggan = $view_pelanggan->getAllPelanggan();
                     foreach ($pelanggan as $view_pelanggan) {
@@ -88,14 +87,5 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         </div>
     </div>
 </body>
-<script>
-    // pop up modal form menu
-    document.querySelector("#show-pop-up").addEventListener("click", function () {
-        document.querySelector(".pop-up-menu").classList.add("active");
-    });
-    document.querySelector(".pop-up-menu .close-btn").addEventListener("click", function () {
-        document.querySelector(".pop-up-menu").classList.remove("active");
-    });
-</script>
 
 </html>
