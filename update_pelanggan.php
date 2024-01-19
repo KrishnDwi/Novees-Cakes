@@ -6,36 +6,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("Location: ../login_admin.php");
     exit();
 }
-require_once 'Pelanggan.php';
-// Check if customer ID is provided in the query string
-if (isset($_GET['id_pelanggan'])) {
-    $id_pelanggan_to_update = $_GET['id_pelanggan'];
-    // Create an instance of the Pelanggan class
-    $pelanggan = new Pelanggan($pdo);
-    // Retrieve existing customer data
-    $existing_pelanggan_data = $pelanggan->getPelangganById($id_pelanggan_to_update);
-    // Check if the form is submitted for updating
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_pelanggan'])) {
-        $id_pelanggan = $_POST['id_pelanggan'];
-        $nama_pelanggan = $_POST['nama_pelanggan'];
-        $no_telp = $_POST['no_telp'];
-        $alamat = $_POST['alamat'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        // Perform the update operation
-        $pelanggan->updatePelanggan($id_pelanggan, $nama_pelanggan, $no_telp, $alamat, $username, $password);
-        // Redirect to the customer list or any other desired page after updating
-        header("Location: admin/data_pelanggan.php");
-        exit();
-    } else if (isset($_POST['cancel'])){
-        header("Location: admin/data_pelanggan.php");
-        exit();
-    }
-} else {
-    // Redirect to the customer list if no customer ID is provided
-    header("Location: admin/data_pelanggan.php");    
-    exit();
-}
+require_once 'process_pelanggan.php';
 ?>
 
 <!DOCTYPE html>
