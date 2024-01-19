@@ -27,6 +27,26 @@ class Admin
         ]);
     }
 
+    public function getAdminById($id) 
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM admin WHERE id_admin = :id");
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function updateAdmin($id, $nama_admin, $no_telp, $alamat, $username, $password) 
+    {
+        $stmt = $this->pdo->prepare("UPDATE admin SET  nama_admin = :nama_admin, no_telp = :no_telp, alamat = :alamat, username = :username, password = :password WHERE id_admin = :id");
+        $stmt->execute([
+            'id' => $id,
+            'nama_admin' => $nama_admin,
+            'no_telp' => $no_telp,
+            'alamat' => $alamat,
+            'username' => $username,
+            'password' => $password
+        ]);
+}
+
 	public function authenticateAdmin($username, $password)
 	{
 		$stmt = $this->pdo->prepare("SELECT * FROM admin WHERE username = :username AND password = :password");

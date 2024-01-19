@@ -51,7 +51,7 @@ require_once 'process_pelanggan.php';
                     
                     <div class="row">
                         <div class="form-element">
-                            <input class="cancel-btn" type="submit" name="cancel" value="Cancel">
+                            <input class="cancel-btn" type="submit" name="cancel_add" value="Cancel">
                         </div>
                         <div class="form-element">
                             <input type="submit" name="add_pelanggan" value="Add">

@@ -6,11 +6,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("Location: ../login_admin.php");
     exit();
 }
-
-//view admin
-require_once '../add_admin.php';
-$view_admin = new Admin($pdo);
-$admin = $view_admin->getAllAdmin();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,9 +35,11 @@ $admin = $view_admin->getAllAdmin();
             </div>
 
             <div class="content">
-            <button id="show-pop-up">
-                    Add Admin
-                </button>
+            <a href="../add_admin.php">
+                    <button class="btn">
+                        Add Admin
+                    </button>
+                </a>
                 <table>
                     <tr>
                         <th>ID</th>
@@ -53,61 +50,29 @@ $admin = $view_admin->getAllAdmin();
                         <th>Password</th>
                         <th>Action</th>
                     </tr>
-            <?php
+                <?php
+                require_once '../process_admin.php';
+                $view_admin = new Admin($pdo);
+                $admin = $view_admin->getAllAdmin();
                 foreach ($admin as $view_admin) 
                 {
-                    echo "<tr>";
-                        echo "<td>" . htmlspecialchars($view_admin['id_admin']) . "</td>";
-                        echo "<td>" . htmlspecialchars($view_admin['nama_admin']) . "</td >";
-                        echo "<td>" . htmlspecialchars($view_admin['no_telp']) . "</td >";
-                        echo "<td>" . htmlspecialchars($view_admin['alamat']) . "</td >";
-                        echo "<td>" . htmlspecialchars($view_admin['username']) . "</td >";
-                        echo "<td>" . htmlspecialchars($view_admin['password']) . "</td >";
-                        echo "<td>" . htmlspecialchars($view_admin['password']) . "</td >";
-                    echo "</tr>";
+                ?>
+                    <tr>
+                        <td> <?php echo htmlspecialchars($view_admin['id_admin']) ?> </td>
+                        <td> <?php echo htmlspecialchars($view_admin['nama_admin']) ?> </td >
+                        <td> <?php echo htmlspecialchars($view_admin['no_telp']) ?> </td >
+                        <td> <?php echo htmlspecialchars($view_admin['alamat']) ?> </td >
+                        <td> <?php echo htmlspecialchars($view_admin['username']) ?> </td >
+                        <td> <?php echo htmlspecialchars($view_admin['password']) ?> </td >
+                        <td> <a href="../update_admin.php?id_admin=<?php echo $view_admin['id_admin']; ?>">Update</a> </td >
+                    </tr>
+                <?php
                 }
-            ?>
+                ?>
                 </table>
-                <div class="pop-up-menu">
-            <div class="close-btn">
-                <button>
-                &times;
-                </button>
-            </div>
-            <h2>Add Admin</h2>
-            <hr>
-            <form method="POST" >
-                <label for="nama_admin">Nama Admin</label>
-                <input type="text" name="nama_admin" required>
-                
-                <label for="no_telp">Telepon</label>
-                <input type="text" name="no_telp" required>
-                
-                <label for="alamat">Alamat</label>
-                <input type="text" name="alamat" required>
-
-                <label for="username">Username</label>
-                <input type="text" name="username" required>
-
-                <label for="password">Password</label>
-                <input type="text" name="password" required>
-
-                
-                <input type="submit" name="add_admin" value="Add">
-            </form>
-        </div>
             </div>
         </div>
     </div>
 </body>
-<script>
-    // pop up modal form menu
-document.querySelector("#show-pop-up").addEventListener("click",function(){
-    document.querySelector(".pop-up-menu").classList.add("active");
-});
-document.querySelector(".pop-up-menu .close-btn").addEventListener("click",function(){
-    document.querySelector(".pop-up-menu").classList.remove("active");
-});
-</script>
 
 </html>
