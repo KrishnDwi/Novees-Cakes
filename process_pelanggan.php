@@ -42,11 +42,11 @@ if (isset($_POST['submit_register']) || isset($_POST['add_pelanggan']))
         $add_pelanggan->addPelanggan($nama_pelanggan, $no_telp, $alamat, $username, $password);
         header("Location: admin/data_pelanggan.php");
 		exit();
-    } else if (isset($_POST['cancel_add']))
-    {
-        header("Location: admin/data_pelanggan.php");
-        exit();
-    }
+    } 
+} else if (isset($_POST['cancel_add']))
+{
+    header("Location: admin/data_pelanggan.php");
+    exit();
 }
 
 //proses update pelanggan oleh admin

@@ -1,29 +1,6 @@
 <?php
 session_start();
-
-require_once 'Admin.php';
-
-$admin = new Admin($pdo);
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_login_admin'])) {
-    $username = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
-
-    if (!empty($username) && !empty($password)) {
-        // Check if the user exists
-        $authenticated_admin = $admin->authenticateAdmin($username, $password);
-        if ($authenticated_admin) {
-            $_SESSION['loggedin'] = true;
-            $_SESSION['username'] = $authenticated_admin['username'];
-            setcookie('username', $authenticated_admin['username'], time() + 3600);
-            header("Location: admin/index.php");
-            exit();
-        } else {
-            // Login failed
-            $error = "Your username/password combination was incorrect";
-        }
-    }
-}
+require_once 'process_admin.php';
 ?>
 
 <!DOCTYPE html>
@@ -37,20 +14,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_login_admin']))
 </head>
 
 <body>
-    <div class="login">
-        <div class="container">
-            <h1>Login || Admin</h1>
-            <form method="POST" action="">
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
-                <?php if (isset($error)): ?>
-                    <p>
-                        <?php echo $error; ?>
-                    </p>
-                <?php endif; ?>
-                <input type="submit" name="submit_login_admin" value="Login">
-            </form>
-            <p>Buat akun <a href="register.php">Sign up</a></p>
+    <div class="form-body">
+        <div class="form-container-login">
+            <div class="header">
+                <h1>Login || Admin</h1>
+            </div>
+            <div class="content">
+                <form method="POST">
+                    <div class="form-element">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" >
+                    </div>
+                    <div class="form-element">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="password">
+                    </div>
+                    <div class="form-element">
+                        <?php if (isset($error)): ?>
+                        <p>
+                            <?php echo $error; ?>
+                        </p>
+                        <?php endif; ?>
+                        <input type="submit" name="submit_login_admin" value="Login">
+                        </div>
+                    </form>
+                </div>
         </div>
     </div>
 
