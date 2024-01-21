@@ -12,8 +12,10 @@ if (isset($_POST['submit_login'])) {
         $authenticated_pelanggan = $pelanggan->authenticate($username, $password);
         if ($authenticated_pelanggan) {
             $_SESSION['loggedin'] = true;
-            $_SESSION['username'] = $authenticated_pelanggan['username'];
-            setcookie('username', $authenticated_pelanggan['username'], time() + 3600);
+            $_SESSION['id_pelanggan'] = $authenticated_pelanggan['id_pelanggan'];
+            $_SESSION['nama_pelanggan'] = $authenticated_pelanggan['nama_pelanggan'];
+            $_SESSION['alamat'] = $authenticated_pelanggan['alamat'];
+            setcookie('nama_pelanggan', $authenticated_pelanggan['nama_pelanggan'], time() + 3600);
             header("Location: index.php");
             exit();
         } else {

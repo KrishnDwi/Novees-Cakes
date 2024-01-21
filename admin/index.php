@@ -2,7 +2,7 @@
 session_start();
 
 // Check if user is logged in
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+if (!isset($_SESSION['loggedin_admin']) || $_SESSION['loggedin_admin'] !== true) {
     header("Location: ../login_admin.php");
     exit();
 }
@@ -35,8 +35,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </div>
 
             <div class="content">
-
-                
+            <h1>Hi <?php echo $_SESSION['username']; ?> </h1>
             </div>
         </div>
     </div>
