@@ -224,49 +224,6 @@ nav #menu-bar{
 
 
 
-/* css section keempat formulir pemesanan */
-.contact header {
-  height: 15vh;
-  background-color: rgba(215, 215, 215, 0.5);
-  font-size: 2.4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.contact .container {
-
-  padding: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.contact .container #formulir {
-  background-color: darksalmon;
-  width: 50vw;
-  padding: 2rem;
-  border-radius: 2rem;
-}
-.contact .container #formulir input{
-  display:block;
-  margin-bottom: 1.3rem;
-  margin-top: 1rem;
-  width: 100%;
-  height: 3vh;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  font-size: 1.1rem;
-}
-.contact .container #formulir button{
-  padding: 1rem 3rem;
-  border-radius: 2rem;
-  background-color: rgba(215, 215, 215, 0.5);
-}
-.contact .container #formulir button:hover{
-  background-color: rgb(215, 215, 215);
-  cursor: pointer;
-}
-
-
 /* css footer */
 footer {
   padding: 15px;
@@ -372,6 +329,9 @@ footer .navbar-nav a:hover{
   padding: 10px;
   border-radius: 5px;
   width: 100%;
+}
+.form-body .content .form-element .checkbox{
+  display: grid;
 }
 
 .form-body .form-container-login .content{
