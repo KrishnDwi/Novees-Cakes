@@ -25,7 +25,6 @@ $menu = $view_menu->getAllMenu();
       <a href="#landing-page">Home</a>
       <a href="#about-us">About Us</a>
       <a href="#menu">Menu</a>
-      <a href="#contact">Contact</a>
       <a href="./login.php">Login</a>
       <a href="./logout.php">Logout</a>
     </div>
@@ -39,7 +38,9 @@ $menu = $view_menu->getAllMenu();
       <p>
         Ciptakan Kenangan Manis, Temukan Kelezatan Sejati di Setiap Gigitan!
       </p>
-      <button>Learn More</button>
+      <a href="add_orders.php">
+        <button class="btn">Pesan Sekarang</button>
+      </a>
     </div>
   </section>
 
@@ -100,28 +101,6 @@ $menu = $view_menu->getAllMenu();
               <button id="next">></button>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Form Contact  -->
-  <section class="contact" id="contact">
-    <header>
-      <h1>Contact</h1>
-    </header>
-    <div class="container">
-      <form action="/" id="formulir">
-
-          <label for="nama">Nama</label>
-          <input type="text" name="nama" id="nama" required>
-
-          <label for="alamat">Email</label>
-          <input type="email" name="alamat" id="alamat" required>
-          
-          <label for="kue">No Telepon</label>
-          <input type="number" name="kue" id="kue" required>
-        <button type="button" onclick="pesan()">Login</button>
-        <p id="respon-pesan"></p>
-      </form>
     </div>
   </section>
 

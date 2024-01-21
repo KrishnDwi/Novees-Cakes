@@ -35,8 +35,46 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </div>
 
             <div class="content">
-
-                
+                <a href="../add_orders.php">
+                    <button class="btn">
+                        Add Orders
+                    </button>
+                </a>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Nama Menu</th>
+                        <th>Total Harga</th>
+                        <th>Action</th>
+                    </tr>
+                    <?php
+                    require_once '../process_orders.php';
+                    $view_orders = new Orders($pdo);
+                    $orders = $view_orders->getAllJoinOrders();
+                    foreach ($orders as $view_orders) {
+                    ?>
+                        <tr>
+                            <td>
+                                <?php echo $view_orders['id_orders'] ?>
+                            </td>
+                            <td>
+                                <?php echo $view_orders['nama_pelanggan'] ?>
+                            </td>
+                            <td>
+                                <?php echo $view_orders['nama_menu'] ?>
+                            </td>
+                            <td>
+                                <?php echo $view_orders['total_harga'] ?>
+                            </td>
+                            <td>
+                                <a href="../update_orders.php?id_orders=<?php echo $view_orders['id_orders']; ?>">Update</a>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </table>
             </div>
         </div>
     </div>
