@@ -27,27 +27,28 @@ require_once 'process_menu.php';
             <div class="content">
                 <form method="POST" autocomplete="off" enctype="multipart/form-data">
                     <div class="form-element">
+                        <input type="hidden" name="id_menu" value="<?php echo $existing_menu_data['id_menu']; ?>">
                         <label for="nama_menu">Nama Menu</label>
-                        <input type="text" name="nama_menu">
+                        <input type="text" name="nama_menu" value="<?php echo htmlspecialchars($existing_menu_data['nama_menu']); ?>" required>
                     </div>
                     <div class="form-element">
                         <label for="harga_menu">Harga Menu</label>
-                        <input type="text" name="harga_menu">
+                        <input type="text" name="harga_menu" value="<?php echo htmlspecialchars($existing_menu_data['harga_menu']); ?>" required>
                     </div>
                     <div class="form-element">
                         <label for="image">Gambar</label>
-                        <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png">
+                        <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png" value="<?php echo htmlspecialchars($existing_menu_data['image']); ?>" required>
                     </div>
                     <div class="form-element">
                         <label for="deskripsi">Deskripsi</label>
-                        <textarea class="deskripsi" name="deskripsi" rows="10" maxlength="500"></textarea>
+                        <textarea class="deskripsi" name="deskripsi" rows="10" maxlength="500" required><?php echo htmlspecialchars($existing_menu_data['deskripsi']); ?></textarea>
                     </div>
                     <div class="row">
                         <div class="form-element">
                             <input class="cancel-btn" type="submit" name="cancel_add" value="Cancel">
                         </div>
                         <div class="form-element">
-                                <input type="submit" name="add_menu" value="Add">
+                            <input type="submit" name="update_menu" value="Add">
                         </div>
                     </div>
                 </form>

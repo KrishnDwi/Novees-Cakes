@@ -366,6 +366,8 @@ footer .navbar-nav a:hover{
 .form-body .content .form-element input[type=text],
 .form-body .content .form-element .password,
 .form-body .content .form-element input[type=submit],
+.form-body .content .form-element input[type=file],
+.form-body .content .form-element textarea,
 .form-body .content .form-element .cancel-btn{
   padding: 10px;
   border-radius: 5px;
