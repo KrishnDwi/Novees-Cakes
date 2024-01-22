@@ -13,19 +13,44 @@
   border-radius: 5px;
   background-color: salmon;
   color: white;
+  margin: 5px;
 }
 .btn:hover{
   background-color: rgb(201, 102, 91);
 }
-
 .cancel-btn{
   padding: 10px;
   border-radius: 5px;
   background-color: crimson;
   color: white;
+  margin: 5px;
 }
 .cancel-btn:hover{
   background-color: rgb(158, 15, 44);
+  cursor: pointer;
+}
+
+.confirm-btn{
+  padding: 10px;
+  border-radius: 5px;
+  background-color: forestgreen;
+  color: white;
+  margin: 5px;
+}
+.confirm-btn:hover{
+  background-color: rgb(18, 74, 18);
+  cursor: pointer;
+}
+
+.primary-btn{
+  padding: 10px;
+  border-radius: 5px;
+  background-color: cadetblue;
+  color: white;
+  margin: 5px;
+}
+.primary-btn:hover{
+  background-color: rgb(56, 95, 96);
   cursor: pointer;
 }
 
@@ -59,7 +84,8 @@ nav .navbar-logo:hover {
 nav .navbar-nav{
   display: flex;
 }
-nav .navbar-nav a {
+nav .navbar-nav a,
+nav .navbar-nav h2{
   display: inline-block;
   padding: 0px 2rem;
   margin: auto 0rem;
@@ -198,7 +224,7 @@ nav #menu-bar{
   right: 2rem;
   font-weight: bolder;
 }
-.menu .item-menu {
+.item-menu {
   margin: 0rem 1rem;
   padding: 2rem;
   border-radius: 1rem;
@@ -209,16 +235,16 @@ nav #menu-bar{
   flex: 4 4 2rem;
   box-shadow: 7px 7px 7px #aaaaaa;
 }
-.menu .item-menu img{
+.item-menu img{
   width: 250px;
   height: 250px;
   object-fit: cover;
   border-radius: 1rem;
 }
-.menu .item-menu p{
+.item-menu p{
   padding: 1rem 0rem;
 }
-.menu .item-menu h3{
+.item-menu h3{
   text-align: right;
 }
 
@@ -245,37 +271,50 @@ footer .navbar-nav a:hover{
 
 
 /* css index_admin */
-.admin .header{
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: salmon;
-  color: white;
-}
-.admin .container{
-  display: flex;
-  height: 90vh;
-}
-.admin .container .side-bar{
-  width: 20vw;
+.admin .side-bar{
+  width: 18vw;
   background-color: cadetblue;
+  position: fixed;
+  z-index: 100;
+  height: 100vh;
 }
-.admin .container .side-bar a{
+.admin .side-bar h2{
+  display: block;
+  padding: 1rem;
+  color: white;
+  font-weight: bolder;
+  font-size: xx-large;
+  margin: 15px auto;
+}
+.admin .side-bar a{
   display: block;
   padding: 1rem;
   color: white;
 }
-.admin .container .side-bar a:hover{
+.admin .side-bar a:hover{
   background-color: #aaaaaa;
 }
+.admin .container .header{
+  margin: 10px auto;
+  width: 85%;
+  text-align: center;
+}
+  .header hr{
+    background-color: black;
+    height: 1px;
+    margin-top: 20px;
+  }
 .admin .container .content{
-  width: 80vw;
-  padding: 15px;
+  width: 82vw;
+  padding: 35px;
+  margin-left: 18vw;
 }
 .admin .container .content table{
   width: 100%;
   border-collapse: collapse;
+}
+.admin .container .content table tr:nth-child(even){
+  background-color: lightgray;
 }
 .admin .container .content table td{
   border: 1px black solid;
@@ -307,7 +346,7 @@ footer .navbar-nav a:hover{
   padding: 20px;
 }
 .form-body .content{
-  background-color: salmon;
+  background-color: lightgray;
   width: 80vw;
   margin: auto;
   padding: 15px;
