@@ -30,7 +30,10 @@ if (isset($_POST['add_orders'])) {
         // Handle the exception (e.g., log the error, display an error message)
         echo "An error occurred: " . $e->getMessage();
     }
-} elseif (isset($_POST['cancel_add'])) {
+}
+
+if (isset($_POST['cancel_add'])) 
+{
     // Redirect to the previous page
     header("Location: ./");
     exit();

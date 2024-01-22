@@ -19,24 +19,27 @@ if (!isset($_SESSION['loggedin_admin']) || $_SESSION['loggedin_admin'] !== true)
 
 <body>
     <div class="admin">
-        <div class="header">
-            <h1>Data Pelanggan</h1>
-        </div>
-        <div class="container">
-            <div class="side-bar">
-                <div class="navbar-nav">
-                    <a href="./index.php">Beranda</a>
-                    <a href="./data_pelanggan.php">Data Pelanggan</a>
-                    <a href="./data_menu.php">Data Menu</a>
-                    <a href="./data_admin.php">Data Admin</a>
-                    <a href="./data_order.php">Data Order</a>
-                    <a href="../logout.php">Logout</a>
-                </div>
+        <div class="side-bar">
+            <div class="navbar-nav">
+                <h2>Hi,
+                    <?= $_SESSION['nama_admin'] ?>
+                </h2>
+                <a href="./data_pelanggan.php">Data Pelanggan</a>
+                <a href="./data_menu.php">Data Menu</a>
+                <a href="./data_admin.php">Data Admin</a>
+                <a href="./data_order.php">Data Order</a>
+                <a href="../logout.php">Logout</a>
             </div>
+        </div>
 
+        <div class="container">
             <div class="content">
+                <div class="header">
+                    <h1>Data Pelanggan</h1>
+                    <hr>
+                </div>
                 <a href="../add_pelanggan.php">
-                    <button class="btn">
+                    <button class="primary-btn">
                         Add Pelanggan
                     </button>
                 </a>
@@ -48,14 +51,14 @@ if (!isset($_SESSION['loggedin_admin']) || $_SESSION['loggedin_admin'] !== true)
                         <th>Alamat</th>
                         <th>Username</th>
                         <th>Password</th>
-                        <th>Action</th>
+                        <th colspan=2>Action</th>
                     </tr>
                     <?php
                     require_once '../process_pelanggan.php';
                     $view_pelanggan = new Pelanggan($pdo);
                     $pelanggan = $view_pelanggan->getAllPelanggan();
                     foreach ($pelanggan as $view_pelanggan) {
-                    ?>
+                        ?>
                         <tr>
                             <td>
                                 <?php echo $view_pelanggan['id_pelanggan'] ?>
@@ -76,10 +79,20 @@ if (!isset($_SESSION['loggedin_admin']) || $_SESSION['loggedin_admin'] !== true)
                                 <?php echo $view_pelanggan['password'] ?>
                             </td>
                             <td>
-                                <a href="../update_pelanggan.php?id_pelanggan=<?php echo $view_pelanggan['id_pelanggan']; ?>">Update</a>
+                                <a
+                                    href="../update_pelanggan.php?id_pelanggan=<?php echo $view_pelanggan['id_pelanggan']; ?>">
+                                    <button class="confirm-btn">Update</button>
+                                </a>
+                            </td>
+                            <td>
+                                <form method="post">
+                                    <input type="hidden" name="id_pelanggan_to_delete"
+                                        value="<?php echo $view_pelanggan['id_pelanggan']; ?>">
+                                    <button class="cancel-btn" type="submit" name="delete_pelanggan">Delete</button>
+                                </form>
                             </td>
                         </tr>
-                    <?php
+                        <?php
                     }
                     ?>
                 </table>

@@ -12,9 +12,10 @@ if (isset($_POST['submit_login_admin'])) {
         $authenticated_admin = $admin->authenticateAdmin($username, $password);
         if ($authenticated_admin) {
             $_SESSION['loggedin_admin'] = true;
+            $_SESSION['nama_admin'] = $authenticated_admin['nama_admin'];
             $_SESSION['username'] = $authenticated_admin['username'];
             setcookie('username', $authenticated_admin['username'], time() + 3600);
-            header("Location: admin/index.php");
+            header("Location: admin/data_pelanggan.php");
             exit();
         } else {
             // Login failed
@@ -74,3 +75,18 @@ if (isset($_GET['id_admin'])) {
     header("Location: admin/data_admin.php");
         exit();
 }
+
+//proses delete admin oleh admin
+if (isset($_POST['delete_admin'])) {
+    $id_admin_to_delete = $_POST['id_admin_to_delete'];
+    
+    // Create an instance of the admin class
+    $admin = new Admin($pdo);
+
+    // Perform the delete operation
+    $admin->deleteAdmin($id_admin_to_delete);
+
+    // Redirect to the customer list or any other desired page after deleting
+    header("Location: ./data_admin.php");
+    exit();
+} 

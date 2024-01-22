@@ -14,7 +14,8 @@ class Orders
     {
         $stmt = $this->pdo->query("SELECT * FROM orders 
             INNER JOIN pelanggan ON orders.id_pelanggan = pelanggan.id_pelanggan 
-            INNER JOIN menu ON orders.id_menu = menu.id_menu");
+            INNER JOIN menu ON orders.id_menu = menu.id_menu 
+            ORDER BY id_orders ASC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 

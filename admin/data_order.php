@@ -19,41 +19,37 @@ if (!isset($_SESSION['loggedin_admin']) || $_SESSION['loggedin_admin'] !== true)
 
 <body>
     <div class="admin">
-        <div class="header">
-            <h1>Data Order</h1>
+        <div class="side-bar">
+            <div class="navbar-nav">
+                <h2>Hi,
+                    <?= $_SESSION['nama_admin'] ?>
+                </h2>
+                <a href="./data_pelanggan.php">Data Pelanggan</a>
+                <a href="./data_menu.php">Data Menu</a>
+                <a href="./data_admin.php">Data Admin</a>
+                <a href="./data_order.php">Data Order</a>
+                <a href="../logout.php">Logout</a>
+            </div>
         </div>
         <div class="container">
-            <div class="side-bar">
-                <div class="navbar-nav">
-                    <a href="./index.php">Beranda</a>
-                    <a href="./data_pelanggan.php">Data Pelanggan</a>
-                    <a href="./data_menu.php">Data Menu</a>
-                    <a href="./data_admin.php">Data Admin</a>
-                    <a href="./data_order.php">Data Order</a>
-                    <a href="../logout.php">Logout</a>
-                </div>
-            </div>
-
             <div class="content">
-                <a href="../add_orders.php">
-                    <button class="btn">
-                        Add Orders
-                    </button>
-                </a>
+                <div class="header">
+                    <h1>Data Orders</h1>
+                    <hr>
+                </div>
                 <table>
                     <tr>
                         <th>ID</th>
                         <th>Nama Pelanggan</th>
                         <th>Nama Menu</th>
                         <th>Total Harga</th>
-                        <th>Action</th>
                     </tr>
                     <?php
                     require_once '../process_orders.php';
                     $view_orders = new Orders($pdo);
                     $orders = $view_orders->getAllJoinOrders();
                     foreach ($orders as $view_orders) {
-                    ?>
+                        ?>
                         <tr>
                             <td>
                                 <?php echo $view_orders['id_orders'] ?>
@@ -67,11 +63,8 @@ if (!isset($_SESSION['loggedin_admin']) || $_SESSION['loggedin_admin'] !== true)
                             <td>
                                 <?php echo $view_orders['total_harga'] ?>
                             </td>
-                            <td>
-                                <a href="../update_orders.php?id_orders=<?php echo $view_orders['id_orders']; ?>">Update</a>
-                            </td>
                         </tr>
-                    <?php
+                        <?php
                     }
                     ?>
                 </table>
