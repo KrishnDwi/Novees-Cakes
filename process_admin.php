@@ -11,7 +11,7 @@ if (isset($_POST['submit_login_admin'])) {
         // Check if the user exists
         $authenticated_admin = $admin->authenticateAdmin($username, $password);
         if ($authenticated_admin) {
-            $_SESSION['loggedin'] = true;
+            $_SESSION['loggedin_admin'] = true;
             $_SESSION['username'] = $authenticated_admin['username'];
             setcookie('username', $authenticated_admin['username'], time() + 3600);
             header("Location: admin/index.php");
