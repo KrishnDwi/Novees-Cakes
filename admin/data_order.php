@@ -42,6 +42,7 @@ if (!isset($_SESSION['loggedin_admin']) || $_SESSION['loggedin_admin'] !== true)
                         <th>ID</th>
                         <th>Nama Pelanggan</th>
                         <th>Nama Menu</th>
+                        <th>Harga Menu</th>
                         <th>Total Harga</th>
                     </tr>
                     <?php
@@ -61,7 +62,10 @@ if (!isset($_SESSION['loggedin_admin']) || $_SESSION['loggedin_admin'] !== true)
                                 <?php echo $view_orders['nama_menu'] ?>
                             </td>
                             <td>
-                                <?php echo $view_orders['total_harga'] ?>
+                                Rp. <?php echo $view_orders['harga_menu'] ?>
+                            </td>
+                            <td>
+                                Rp. <?php echo $view_orders['total_harga'] ?>
                             </td>
                         </tr>
                         <?php
