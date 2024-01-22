@@ -2,6 +2,8 @@
 require_once 'Menu.php';
 $view_menu = new Menu($pdo);
 $menu = $view_menu->getAllMenu();
+
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,8 +27,12 @@ $menu = $view_menu->getAllMenu();
       <a href="#landing-page">Home</a>
       <a href="#about-us">About Us</a>
       <a href="#menu">Menu</a>
-      <a href="./login.php">Login</a>
-      <a href="./logout.php">Logout</a>
+      <?php if (!isset($_SESSION['loggedin'])) {
+        echo '<a href="./login.php">Login</a>';
+      } ?>
+      <?php if (isset($_SESSION['loggedin'])) {
+        echo '<a href="./logout.php">Logout</a>';
+      } ?>
     </div>
     <!-- Responsive Side Menu Navigation -->
     <a href="#" id="menu-bar"><i data-feather="menu"></i></a>
@@ -38,6 +44,9 @@ $menu = $view_menu->getAllMenu();
       <p>
         Ciptakan Kenangan Manis, Temukan Kelezatan Sejati di Setiap Gigitan!
       </p>
+      <?php if (isset($_SESSION['loggedin'])) {
+        echo '<h2> Selamat Datang, ' . $_SESSION['nama_pelanggan'] .  '</h2>';
+      } ?>
       <a href="add_orders.php">
         <button class="btn">Pesan Sekarang</button>
       </a>
@@ -104,21 +113,11 @@ $menu = $view_menu->getAllMenu();
     </div>
   </section>
 
-
-
-
-
-
-
-
-
-
   <footer>
     <div class="navbar-nav">
       <a href="#landing-page">Home</a>
       <a href="#about-us">About Us</a>
       <a href="#menu">Menu</a>
-      <a href="#contact">Contact</a>
     </div>
     <p>Created by <a href="">Krishn</a> | &copy; 2023.</p>
   </footer>

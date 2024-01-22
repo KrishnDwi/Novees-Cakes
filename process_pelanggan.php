@@ -81,3 +81,18 @@ if (isset($_GET['id_pelanggan'])) {
     header("Location: admin/data_pelanggan.php");
         exit();
 }
+
+//proses delete pelanggan oleh admin
+if (isset($_POST['delete_pelanggan'])) {
+    $id_pelanggan_to_delete = $_POST['id_pelanggan_to_delete'];
+    
+    // Create an instance of the Pelanggan class
+    $pelanggan = new Pelanggan($pdo);
+
+    // Perform the delete operation
+    $pelanggan->deletePelanggan($id_pelanggan_to_delete);
+
+    // Redirect to the customer list or any other desired page after deleting
+    header("Location: ./data_pelanggan.php");
+    exit();
+}

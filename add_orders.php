@@ -30,7 +30,13 @@ $menu = $view_menu->getAllMenu();
                 <form method="POST">
                     <div class="row">
                         <div class="form-element">
+                            <label>Nama Pelanggan</label>
                             <input type="text" name="id_pelanggan" value="<?= $_SESSION['id_pelanggan'] ?>" hidden>
+                            <input type="text" value="<?= $_SESSION['nama_pelanggan'] ?>">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-element">
                             <label for="nama_menu">Pilihan menu</label>
                             <div class="checkbox">
                                 <?php foreach ($menu as $view_menu): ?>

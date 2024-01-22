@@ -121,3 +121,27 @@ else if (isset($_GET['id_menu']) === 4)
     header("Location: admin/data_menu.php");
         exit();
 }
+
+//proses delete menu oleh admin
+if (isset($_POST['delete_menu'])) {
+    $id_menu_to_delete = $_POST['id_menu_to_delete'];
+    
+    // Create an instance of the menu class
+    $menu = new Menu($pdo);
+
+    // Retrieve existing menu data
+    $existing_menu_data = $menu->getMenuById($id_menu_to_delete);
+
+    // Perform the delete operation
+    $menu->deleteMenu($id_menu_to_delete);
+
+    // Hapus gambar terkait dari sistem file
+    $imageToDelete = '/img/menu/' . $existing_menu_data['image'];
+    if (file_exists($imageToDelete)) {
+        unlink($imageToDelete);
+    }
+
+    // Redirect to the menu list or any other desired page after deleting
+    header("Location: ./data_menu.php");
+    exit();
+}

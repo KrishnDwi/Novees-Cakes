@@ -46,7 +46,14 @@ class Pelanggan
             'username' => $username,
             'password' => $password
         ]);
-}
+    }
+
+    public function deletePelanggan($id_pelanggan) {
+        $sql = "DELETE FROM pelanggan WHERE id_pelanggan = :id_pelanggan";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['id_pelanggan' => $id_pelanggan]);
+        $stmt->execute();
+    }
 
 
 	public function authenticate($username, $password)

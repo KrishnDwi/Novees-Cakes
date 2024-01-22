@@ -20,28 +20,30 @@ require_once '../process_menu.php';
 
 <body>
     <div class="admin">
-        <div class="header">
-            <h1>Data Menu</h1>
-        </div>
-        <div class="container">
-            <div class="side-bar">
-                <div class="navbar-nav">
-                    <a href="./index.php">Beranda</a>
-                    <a href="./data_pelanggan.php">Data Pelanggan</a>
-                    <a href="./data_menu.php">Data Menu</a>
-                    <a href="./data_admin.php">Data Admin</a>
-                    <a href="./data_order.php">Data Order</a>
-                    <a href="../logout.php">Logout</a>
-                </div>
+        <div class="side-bar">
+            <div class="navbar-nav">
+                <h2>Hi,
+                    <?= $_SESSION['nama_admin'] ?>
+                </h2>
+                <a href="./data_pelanggan.php">Data Pelanggan</a>
+                <a href="./data_menu.php">Data Menu</a>
+                <a href="./data_admin.php">Data Admin</a>
+                <a href="./data_order.php">Data Order</a>
+                <a href="../logout.php">Logout</a>
             </div>
+        </div>
 
+        <div class="container">
             <div class="content">
+                <div class="header">
+                    <h1>Data Menu</h1>
+                    <hr>
+                </div>
                 <a href="../add_menu.php">
-                    <button class="btn">
+                    <button class="primary-btn">
                         Add Menu
                     </button>
                 </a>
-
                 <table>
                     <tr>
                         <th>ID</th>
@@ -49,7 +51,7 @@ require_once '../process_menu.php';
                         <th>Harga</th>
                         <th>Gambar</th>
                         <th>Deskripsi</th>
-                        <th>Action</th>
+                        <th colspan=2>Action</th>
 
                     </tr>
                     <?php
@@ -74,10 +76,19 @@ require_once '../process_menu.php';
                                 <?php echo htmlspecialchars($view_menu['deskripsi']) ?>
                             </td>
                             <td>
-                                <a href="../update_menu.php?id_menu=<?php echo $view_menu['id_menu']; ?>">Update</a>
+                                <a href="../update_menu.php?id_menu=<?php echo $view_menu['id_menu']; ?>">
+                                    <button class="confirm-btn">Update</button>
+                                </a>
+                            </td>
+                            <td>
+                                <form method="post">
+                                    <input type="hidden" name="id_menu_to_delete"
+                                        value="<?php echo $view_menu['id_menu']; ?>">
+                                    <button class="cancel-btn" type="submit" name="delete_menu">Delete</button>
+                                </form>
                             </td>
                         </tr>
-                    <?php
+                        <?php
                     }
                     ?>
                 </table>

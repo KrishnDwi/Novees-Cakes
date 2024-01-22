@@ -54,7 +54,7 @@ require_once 'process_admin.php';
                             <input class="cancel-btn" type="submit" name="cancel_add" value="Cancel">
                         </div>
                         <div class="form-element">
-                            <input type="submit" name="add_admin" value="Add">
+                            <input class="confirm-btn" type="submit" name="add_admin" value="Add">
                         </div>
                     </div>
                 </form>

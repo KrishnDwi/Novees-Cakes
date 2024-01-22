@@ -2,7 +2,7 @@
 session_start();
 
 // Check if the user is logged in
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+if (!isset($_SESSION['loggedin_admin']) || $_SESSION['loggedin_admin'] !== true) {
     header("Location: ../login_admin.php");
     exit();
 }
@@ -59,10 +59,10 @@ require_once 'process_admin.php';
                     
                     <div class="row">
                         <div class="form-element">
-                            <input class="cancel-btn" type="submit" name="cancel" value="Cancel">
+                            <input class="cancel-btn" type="submit" name="cancel_update" value="Cancel">
                         </div>
                         <div class="form-element">
-                            <input type="submit" name="update_admin" value="Update">
+                            <input class="confirm-btn" type="submit" name="update_admin" value="Update">
                         </div>
                     </div>
                 </form>
