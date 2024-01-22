@@ -67,7 +67,7 @@ require_once '../process_menu.php';
                                 <?php echo htmlspecialchars($view_menu['nama_menu']) ?>
                             </td>
                             <td>
-                                <?php echo htmlspecialchars($view_menu['harga_menu']) ?>
+                                Rp. <?php echo htmlspecialchars($view_menu['harga_menu']) ?>
                             </td>
                             <td> <img class='menu-image'
                                     src='../img/menu/<?php echo htmlspecialchars($view_menu['image']) ?>' alt="ga kebaca">
